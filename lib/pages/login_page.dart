@@ -1,6 +1,7 @@
 import 'package:ap03/components/my_button.dart';
 import 'package:ap03/components/my_textfield.dart';
 import 'package:ap03/components/square_tile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,12 +11,17 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-final emailController = TextEditingController();
-final passwordController = TextEditingController();
-
-void signUserIn() {}
-
 class _LoginPageState extends State<LoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 50),
-            const MyButton(
+            MyButton(
               text: 'Sign In',
               onTap: signUserIn,
             ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "338045852262",
+    "project_id": "ap03-52926",
+    "storage_bucket": "ap03-52926.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338045852262:android:3ce708e63fac31280b6ba7",
+        "android_client_info": {
+          "package_name": "com.alexsison.ap03"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-OC5mdkSiqPNZRT5GE96uHYRg5K1TR0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
