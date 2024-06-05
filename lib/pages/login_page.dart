@@ -13,6 +13,8 @@ class LoginPage extends StatefulWidget {
 final emailController = TextEditingController();
 final passwordController = TextEditingController();
 
+void signUserIn() {}
+
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -64,7 +66,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 50),
-            MyButton(text: 'Sign In', onTap: () {}),
+            const MyButton(
+              text: 'Sign In',
+              onTap: signUserIn,
+            ),
             const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
