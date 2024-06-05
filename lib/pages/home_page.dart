@@ -1,7 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final user = FirebaseAuth.instance.currentUser!;
+
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +17,12 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.logout_outlined))
+          IconButton(
+              onPressed: signUserOut, icon: const Icon(Icons.logout_outlined))
         ],
       ),
-      body: const Center(
-        child: Text('You are logged in'),
+      body: Center(
+        child: Text('You are logged in as: ${user.email}'),
       ),
     );
   }

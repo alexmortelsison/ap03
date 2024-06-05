@@ -1,4 +1,5 @@
 import 'package:ap03/pages/home_page.dart';
+import 'package:ap03/pages/login_or_register_page.dart';
 import 'package:ap03/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,9 @@ class _AuthPageState extends State<AuthPage> {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const HomePage();
+          return HomePage();
         } else {
-          return const LoginPage();
+          return const LoginOrRegisterPage();
         }
       },
     );
